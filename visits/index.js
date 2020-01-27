@@ -10,7 +10,6 @@ const client = redis.createClient({
 client.set("visits", 0);
 
 app.get("/", (req, res) => {
-  process.exit(100);
   client.get("visits", (er, visits) => {
     res.send("Number of visits is " + visits);
     client.set("visits", parseInt(visits) + 1);
