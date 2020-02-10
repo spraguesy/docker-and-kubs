@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t asprague/client -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true asprague/client npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "client"
+  env: "Client-env"
+  bucket_name: "elasticbeanstalk-us-east-2-675428214133"
+  bucket_path: "client"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

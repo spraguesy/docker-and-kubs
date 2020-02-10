@@ -159,8 +159,64 @@ Docker Lifecycle
 </ul>
 <br/>
 
+<!-- Multi-step Dockerfile -->
+<h5>Multi-step Build Process</h5>
+<p>
+    <code>
+    
+    </code>
+</p>
+
 <!-- Docker Compose -->
 <hr>
 <h3>Docker Compose</h3>
+<p>
+Docker compose helps connect containers together. There is another way to do it with
+the docker cli, but it is rarely used. Docker compose helps you from having to write 
+out a lot of code to run and connect containers.
+
+Docker compose is run through a yaml file, usually titled docker-compose.yaml.
+
+From a pseudo code perspective, it goes like this:
+
+<ul>
+    <li>Here are the containers I want</li>
+    <ul>
+    <li>container image 1</li>
+        <ul>
+            <li>Commands associated with running image 1</li>
+        </ul>
+    <li>container image 2</li>
+        <ul>
+            <li>Commands assocaited with running image 2</li> 
+        </ul>
+    </ul>
+</ul>
+</p>
+<br/>
+
+<!-- Start Containers -->
+<h5>Start Containers</h5>
+<p>
+<code>docker-compose up -d</code>
+</p>
+<ul>
+    <li>Starts the containers specified in the docker-compose.yaml file</li>
+    <li><code>--build</code> so that the containers get built</li>
+</ul>
+<br/>
+
+<!-- Stop Containers -->
+<h5>Start Containers</h5>
+<p>
+<code>docker-compose down</code>
+</p>
+<ul>
+    <li>Stops the containers</li>
+</ul>
 <br/>
 <hr>
+
+<hr>
+<h3>Nginx</h3>
+<p>Nginx (engine-x) is a good service for production web environments.</p>
